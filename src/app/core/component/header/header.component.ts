@@ -10,6 +10,26 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  isLanguageClicked: boolean = false;
   activeLanguage: string = "English";
-  languageList: any = ["German", "Bangla"]
+  languageList: any = [
+    {
+      name: "English",
+      isActive: true
+    },
+    {
+      name: "German",
+      isActive: false
+    },
+    {
+      name: "Bengali",
+      isActive: false
+    }
+  ]
+
+  ngOnInit(): void {}
+
+  clickLanguageSwitcher(): void {
+    this.isLanguageClicked = !this.isLanguageClicked;
+  }
 }
