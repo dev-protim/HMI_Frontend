@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg fixed top-0 left-0 w-[100%] py-[15px]">
+  <div class="container">
+    <a class="navbar-brand w-[100px]" href="#">
+      <img src="assets/images/logo.png" alt="Logo">
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="language-switcher">
+            <div class="language-switcher__result">{{ activeLanguage }} <span><i class="bi bi-chevron-down"></i></span></div>
+            <!-- <ul>
+                <li *ngFor="let item of languageList">{{ item }}</li>
+            </ul> -->
+        </div>
+    </div>
+  </div>
+</nav>
