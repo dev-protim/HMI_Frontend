@@ -4,6 +4,10 @@
 @tailwind utilities;
 
 @layer components {
+    .section-title {
+        @apply mb-[30px]
+    }
+    
     .section-title h2 {
         @apply text-[30px]/[45px] text-black font-[500]
     }
