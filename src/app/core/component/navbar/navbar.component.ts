@@ -1,15 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { JobFormComponent } from '../job-form/job-form.component';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, JobFormComponent],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  imports: [CommonModule],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss'
 })
-export class HeaderComponent {
+export class NavbarComponent {
 
   isLanguageClicked: boolean = false;
   activeLanguage: string = "English";
@@ -33,4 +32,5 @@ export class HeaderComponent {
   clickLanguageSwitcher(): void {
     this.isLanguageClicked = !this.isLanguageClicked;
   }
+
 }

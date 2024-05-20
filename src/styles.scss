@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .section-title h2 {
+        @apply text-[30px]/[45px] text-black font-[500]
+    }
+}
+
 @layer base {
     .job-form__item {
         @apply relative [&:not(:first-child)]:pl-[45px] [&:not(:first-child)]:before:content-[""] [&:not(:first-child)]:before:absolute [&:not(:first-child)]:before:left-0 [&:not(:first-child)]:before:w-[1px] [&:not(:first-child)]:before:h-[40px] [&:not(:first-child)]:before:bg-gray [&:not(:first-child)]:before:top-[50%] [&:not(:first-child)]:before:translate-y-[-50%]
