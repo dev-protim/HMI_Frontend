@@ -15,10 +15,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="language-switcher relative">
-          <div class="language-switcher__result group peer text-white cursor-pointer" [ngClass]="{'is-active': isLanguageClicked}" (click)="clickLanguageSwitcher()"><span class="mr-[5px]">{{ activeLanguage }}</span> <span class="group-[.is-active]:rotate-180 transition-all inline-block"><i class="bi bi-chevron-down"></i></span></div>
-          <ul class="absolute top-[100%] right-0 w-[150px] bg-white border-0 py-[5px] translate-y-[10px] opacity-0 pointer-events-none transition-all peer-[.is-active]:translate-y-[5px] peer-[.is-active]:opacity-[1_!important] peer-[.is-active]:pointer-events-auto">
+          <div class="language-switcher__result group peer text-white [.navbar-scroll_&]:!text-black cursor-pointer" [ngClass]="{'is-active': isLanguageClicked}" (click)="clickLanguageSwitcher()"><span class="mr-[5px]">{{ activeLanguage }}</span> <span class="group-[.is-active]:rotate-180 transition-all inline-block"><i class="bi bi-chevron-down"></i></span></div>
+          <!-- <ul class="absolute top-[100%] right-0 w-[150px] bg-white border-0 py-[5px] translate-y-[10px] opacity-0 pointer-events-none transition-all peer-[.is-active]:translate-y-[5px] peer-[.is-active]:opacity-[1_!important] peer-[.is-active]:pointer-events-auto">
               <li *ngFor="let item of languageList" class="p-[3px_15px] cursor-pointer" [ngClass]="{'active': item.isActive}">{{ item.name }}</li>
-          </ul>
+          </ul> -->
       </div>
     </div>
   </nav>

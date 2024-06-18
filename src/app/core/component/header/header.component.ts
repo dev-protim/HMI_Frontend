@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { JobFormComponent } from '../job-form/job-form.component';
 
 @Component({
@@ -11,8 +11,10 @@ import { JobFormComponent } from '../job-form/job-form.component';
 })
 export class HeaderComponent {
 
+  @Input() isJobSearchForm: boolean = false;
   isLanguageClicked: boolean = false;
   activeLanguage: string = "English";
+  @Output() jobResponse = new EventEmitter<any>();
   languageList: any = [
     {
       name: "English",
@@ -32,5 +34,9 @@ export class HeaderComponent {
 
   clickLanguageSwitcher(): void {
     this.isLanguageClicked = !this.isLanguageClicked;
+  }
+
+  getJobResponse(data: any): void {
+    this.jobResponse.emit(data);
   }
 }
