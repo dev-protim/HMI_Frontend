@@ -31,12 +31,12 @@ export class NavbarComponent {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    let element = document.querySelector('.navbar') as HTMLElement;
-    if (window.pageYOffset > element.clientHeight) {
-      element.classList.add('navbar-scroll');
-    } else {
-      element.classList.remove('navbar-scroll');
-    }
+    // let element = document.querySelector('.navbar') as HTMLElement;
+    // if (window.pageYOffset > element.clientHeight) {
+    //   element.classList.add('navbar-scroll');
+    // } else {
+    //   element.classList.remove('navbar-scroll');
+    // }
   }
 
   clickLanguageSwitcher(): void {

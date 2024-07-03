@@ -7,11 +7,12 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { SubSink } from 'subsink';
 import { Job } from '../../../core/models/job'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [HeaderComponent, JobCardComponent, CommonModule],
+  imports: [HeaderComponent, JobCardComponent, CommonModule, NgxPaginationModule],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
   providers: [ApiCallService]
@@ -24,6 +25,9 @@ export class HomepageComponent implements OnInit {
   allJobs: any[] = [];
   totalJobs: any;
   jobType: string = "Latest ";
+  jobResult: any;
+  isJobResult: boolean = false;
+  currentPage: number = 1;
 
   constructor(public apiService: ApiCallService,
     private http: HttpClient
@@ -31,11 +35,11 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getData();
+    this.getRecentJobs();
       
   }
 
-  getData(): any {
+  getRecentJobs(): any {
     // this.latestJobs$ = this.apiService.recentJobs();
     this.subs.sink = this.apiService.recentJobs().subscribe((response: any) => {
       this.latestJob = response;
@@ -46,13 +50,22 @@ export class HomepageComponent implements OnInit {
   }
 
   getSearchResult(data: any): void {
-    this.totalJobs = data.total_jobs;
+    this.isJobResult = true;
+    this.jobResult = data;
+    this.totalJobs = this.jobResult.total_jobs;
+    // this.totalJobs = data.total_jobs;
     this.allJobs = data.jobs;
-    this.jobType = "All ";
-    console.log(data, 'data')
+    // this.jobType = "All ";
+    console.log(this.jobResult, 'this.jobResult')
+    this.jobType = "All "
+  }
+
+  pageChanged(event: any): void {
+    console.log(event)
+    this.currentPage = event;
   }
 
   ngOnDestroy(): void {
-    // this.subs.unsubscribe();
+    this.subs.unsubscribe();
   }
 }

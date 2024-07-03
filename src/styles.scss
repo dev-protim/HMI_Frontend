@@ -34,4 +34,12 @@
     .job-card__level li {
         @apply inline-block mr-[8px] p-[4px_12px] text-[12px]/[16px] rounded-[10px] mb-[10px] [&:nth-child(1)]:bg-[rgba(63,4,131,0.2)] [&:nth-child(1)]:text-[rgba(63_4_131)] [&:nth-child(2)]:bg-[rgba(38,155,71,0.2)] [&:nth-child(2)]:text-[rgba(38_155_71)] [&:nth-child(3)]:bg-[rgba(134,62,27,0.2)] [&:nth-child(3)]:text-[rgba(134_62_27)]
     }
+
+    .ngx-pagination {
+        @apply text-center mb-[30px] #{!important}
+    }
+
+    .ngx-pagination .current {
+        @apply bg-primary-color #{!important}
+    }
 }

@@ -12,6 +12,7 @@ import { JobFormComponent } from '../job-form/job-form.component';
 export class HeaderComponent {
 
   @Input() isJobSearchForm: boolean = false;
+  @Input() paginationData: any;
   isLanguageClicked: boolean = false;
   activeLanguage: string = "English";
   @Output() jobResponse = new EventEmitter<any>();

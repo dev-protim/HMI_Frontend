@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ApiCallService } from '../../services/api/api-call.service';
 import { SubSink } from 'subsink';
@@ -13,6 +13,7 @@ import { SubSink } from 'subsink';
 })
 export class JobFormComponent {
 
+  @Input() currentPage: number = 1;
   subs = new SubSink();
   myForm = this.fb.group({
     title: [''],
@@ -26,12 +27,17 @@ export class JobFormComponent {
 
   }
 
-  submit(): void {
+  ngOnChanges(): void {
+    console.log(this.currentPage, "from form component")
+    this.submit(this.currentPage);
+  }
+
+  submit(page: number): void {
     let data = {
       title: this.myForm.value.title,
       location: this.myForm.value.location,
-      page_size: 10,
-      page: 1
+      page_size: 12,
+      page: page
     }
     console.log(data, "forms data")
     this.subs.sink = this.apiService.getJobs(data).subscribe((res: any) => {
