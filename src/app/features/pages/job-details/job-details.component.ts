@@ -4,11 +4,12 @@ import { NewlineReplaceBrPipe } from '../../../shared/pipes/newline-replace-br.p
 import { ActivatedRoute } from '@angular/router';
 import { SubSink } from 'subsink';
 import { ApiCallService } from '../../../core/services/api/api-call.service';
+import { TimeDiffPipe } from '../../../shared/pipes/time-diff.pipe';
 
 @Component({
   selector: 'app-job-details',
   standalone: true,
-  imports: [HeaderComponent, NewlineReplaceBrPipe],
+  imports: [HeaderComponent, NewlineReplaceBrPipe, TimeDiffPipe],
   templateUrl: './job-details.component.html',
   styleUrl: './job-details.component.scss'
 })
