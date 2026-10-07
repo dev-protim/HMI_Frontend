@@ -1,27 +1,27 @@
-# Frontend
+# Job Recommendation – HMI Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+Angular frontend for a job-recommendation system built in the
+Human-Machine Interaction course of my M.Sc. Applied Computer Science
+(Hochschule Schmalkalden, 2024).
 
-## Development server
+The backend uses an AI model trained on a large job dataset to find
+related jobs. This app lets users browse jobs, open job details and
+see similar positions suggested by the model.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- Homepage, job list and job detail pages
+- Related-job suggestions from the AI model via the backend API
+- [Search / filters – remove if not included]
 
-## Code scaffolding
+## Tech stack
+- Angular 17, TypeScript, SCSS
+- Structure: `core/` (services, HTTP interceptors, models),
+  `features/pages/` (homepage, job-list, job-details), `shared/pipes/`
+- Angular SSR configuration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Run locally
+npm install
+ng serve
+→ http://localhost:4200
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Backend: https://github.com/dev-protim/HMI_Project/tree/main/backend
